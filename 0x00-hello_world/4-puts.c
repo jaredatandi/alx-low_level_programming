@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main function - prints the line "programming is like building a multilingual puzzle"
- * return: 0 if succssful, a number if otherwise 
+ * main - prints the line "programming is like building a multilingual puzzle"
+ * Return: 0 if succssful, a number if otherwise 
 */
 int main(void)
 {
