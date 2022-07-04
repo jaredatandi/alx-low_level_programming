@@ -8,21 +8,17 @@ int main(void)
 {
 	int a, b;
 
-	for (a = 48; b <= 57; b++)
+	for (a = 0; a <= 8; a++)
 	{
-		for (b = 49; b <= 57; b++)
+		for (b = a + 1; b <= 9; b++)
 		{
+			putchar((a % 10) + '0');
+			putchar((b % 10) + '0');
+			if (a == 8 && b == 9)
+				continue;
 
-			if (b > a)
-			{
-				putchar(a);
-				putchar(b);
-				if (a != 56 || b != 57)
-				{
-					putchar(',');
-					putchar(' ');
-				}
-			}
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
