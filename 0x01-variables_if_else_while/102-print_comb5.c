@@ -6,20 +6,20 @@
  */
 int main(void)
 {
-	int j, k;
+	int i, j;
 
-	for (j = 0; j < 100; k++)
+	for (i = 0; i < 100; i++)
 	{
-		for (k = 0; k < 100; k++)
+		for (j = 0; j < 100; j++)
 		{
-			if (j < k)
+			if (i < j)
 			{
-				putchar((k / 10) + 48);
-				putchar((k % 10) + 48);
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
 				putchar(' ');
 				putchar((j / 10) + 48);
 				putchar((j % 10) + 48);
-				if (j != 98 || k != 99)
+				if (i != 98 || j != 99)
 				{
 					putchar(',');
 					putchar(' ');
@@ -30,4 +30,3 @@ int main(void)
 	putchar('\n');
 	return (0);
 }
-
