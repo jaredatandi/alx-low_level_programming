@@ -7,7 +7,7 @@
  * Return: int if positive
  * abs value if negative
  */
-int _abs(number)
+int _abs(int number)
 {
 	if (number > 0)
 		return (number);
