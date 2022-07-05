@@ -13,14 +13,18 @@ void times_table(void)
 	{
 		_putchar('0');
 
-		int b = 0;
+		int b;
+
+		b = 0;
 
 		while (b < 10)
 		{
 			_putchar(',');
 			_putchar(' ');
 
-			int c = a * b;
+			int c = 0;
+
+			c = a * b;
 
 			if (c <= 9)
 				_putchar(' ');
