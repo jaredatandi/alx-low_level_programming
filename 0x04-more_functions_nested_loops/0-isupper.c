@@ -8,13 +8,5 @@
 
 int _isupper(int c)
 {
-	int i = 'A';
-
-	while (i < 'Z')
-	{
-		if (c == i)
-			return (1);
-		i++;
-	}
-	return (0);
+	return (c >= 'A' && c <= 'Z');
 }
