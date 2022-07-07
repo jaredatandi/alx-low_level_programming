@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-	print_square(3);
+	print_triangle(10);
 	return (0);
 }
