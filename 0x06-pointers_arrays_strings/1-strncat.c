@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * _strcat - appends the src string to dest
+ * _strncat - appends the src string to dest
  * @dest: the resultant string
  * @src: the string to be appended
+ * @n: bytes number
  *
  * Return: a pointer to dest string
  */
