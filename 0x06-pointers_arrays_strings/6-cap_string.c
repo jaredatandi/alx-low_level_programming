@@ -1,36 +1,34 @@
 #include "main.h"
 
 /**
- * cap_string - capitilize each word
- * @word: each word
- * Return: a pointer to the string
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
+ *
+ * Return: the resulting string
  */
-char *cap_string(char *word)
+char *cap_string(char *s)
 {
 	int i, j;
 
-	char speChar[13] = {'.', ',', ';', ' ',
-		'\n', '\t', '"', '!', '?', '(', ')', '{', '}'};
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
 
-	for (i = 0; word[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (word[i] == '\t')
-			word[i] = ' ';
-
-		if (i == 0 && word[i] >= 'a' && word[i] <= 'z')
-			word -= 32;
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
 
 		for (j = 0; j < 13; j++)
 		{
-			if (word[i] == speChar[j])
+			if (s[i] == spe[j])
 			{
-				if (word[i + 1] >= 'a' && word[i + 1] <= 'z')
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
 				{
-					word[i + 1] -= 32;
+					s[i + 1] -= 32;
 				}
 			}
 		}
 	}
-	return (word);
 
+	return (s);
 }
