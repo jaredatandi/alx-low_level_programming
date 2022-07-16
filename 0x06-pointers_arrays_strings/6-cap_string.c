@@ -14,8 +14,11 @@ char *cap_string(char *word)
 
 	for (i = 0; word[i] != '\0'; i++)
 	{
+		if (word[i] == '\t')
+			word[i] = ' ';
+
 		if (i == 0 && word[i] >= 'a' && word[i] <= 'z')
-			word = word - 32;
+			word -= 32;
 
 		for (j = 0; j < 13; j++)
 		{
