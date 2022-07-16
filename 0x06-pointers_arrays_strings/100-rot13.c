@@ -2,26 +2,26 @@
 
 /**
  * rot13 - rotates a char 13 positions
- * @ch: the specific char
+ * @s: the specific char
  * Return: rotated string
  */
 char *rot13(char *s)
 {
-	int count = 0, i;
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i, j;
 
-	while (*(s + count) != '\0')
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (i = 0; i < 52; i++)
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			if (*(s + count) == alphabet[i])
+			if (s[i] == a[j])
 			{
-				*(s + count) = rot13[i];
+				s[i] = b[j];
 				break;
 			}
 		}
-		count++;
 	}
 
 	return (s);
