@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * memset - fills a buffer with a constant 
+ * memset - fills a buffer with a constant
  * @s: array to be filled
  * @b: constant bytes
  * @n: the first n bytes
