@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * memset - fills a buffer with a constant
+ * _memset - fills a buffer with a constant
  * @s: array to be filled
  * @b: constant bytes
  * @n: the first n bytes
@@ -10,11 +10,14 @@
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
-	for (i = 0; i < n; i++)
+	if (n > 0)
 	{
-		s[i] = b;
+		for (i = 0; i < n; i++)
+		{
+			s[i] = b;
+		}
 	}
 
 	return (s);
