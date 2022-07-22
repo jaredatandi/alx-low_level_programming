@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 {
 	int a, b, res;
 
-	if (argc == 1)
+	if (argc == 1 || argc < 3 || argc > 3)
 	{
 		printf("Error\n");
 
@@ -23,12 +23,6 @@ int main(int argc, char **argv)
 	b = atoi(argv[2]);
 	
 	res = a * b;
-
-	if (argc < 3  || argc > 3)
-	{
-		printf("Error\n");
-		return (1);
-	}
 
 	printf("%d\n", res);
 
