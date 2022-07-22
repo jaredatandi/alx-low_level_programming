@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * progname - prints the name of this file
+ * main - prints the name of this file
  * @argc: the argument count
  * @argv: argument vector
- * Return: nothing 
+ * Return: nothing
  */
 
 int main(int __attribute__((unused)) argc, char *argv[])
