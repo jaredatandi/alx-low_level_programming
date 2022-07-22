@@ -1,6 +1,6 @@
 #!/bin/bash
 
--Wall -Werror -Wextra -pedantic -std=gnu8 -c *.c
+gcc -c *.c
 
 ar rc liball.a *.o
 
