@@ -13,19 +13,18 @@ char *str_concat(char *s1, char *s2)
 
 	len1 = len2 = 0;
 
-	for (i = 0; s1[i] != '\0'; i++)
+	if (s1 == NULL)
+		len1 = 0;
+	else for (i = 0; s1[i] != '\0'; i++)
 	{
-		if (s1 == NULL)
-			len1 = 0;
-		else
-			len1++;
+		len1++;
 	}
-	for (i = 0; s2[i] != '\0'; i++)
+
+	if (s2 == NULL)
+		len2 = 0;
+	else for (i = 0; s2[i] != '\0'; i++)
 	{
-		if (s2 == NULL)
-			len2 = 0;
-		else
-			len2++;
+		len2++;
 	}
 
 	total_len = len1 + len2 + 1;
