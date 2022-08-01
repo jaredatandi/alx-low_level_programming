@@ -3,4 +3,4 @@
 *.out
 fa.c
 *.swp
-
+*.h.gch
