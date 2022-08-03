@@ -1,0 +1,6 @@
+#!/bin/bash
+
+*.out
+*.swp
+fa.c
+
