@@ -40,7 +40,7 @@ list_t *add_node_end(list_t **head, const char *str);
 /**************** free node *******************************/
 void free_list(list_t *head);
 
-
+void first(void) __attribute__((constructor));
 
 
 #endif
