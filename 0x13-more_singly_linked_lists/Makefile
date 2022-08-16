@@ -4,7 +4,7 @@ CC = gcc
 SRC = *.c
 NAME = list
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra -pedantic
+CFLAGS 	= -Werror -Wextra -pedantic -std=gnu89
 
 .PHONY: all
 all: 
