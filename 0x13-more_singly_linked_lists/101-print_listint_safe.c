@@ -11,11 +11,11 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count = 0;
 	long int add_diff;
 
-	if (!head)
-		return (98);
-
 	while (head)
 	{
+		if (!head)
+			return (98);
+
 		add_diff = head - head->next;
 		count++;
 
