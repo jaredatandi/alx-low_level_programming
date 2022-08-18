@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * binary_to_unit - converts a binary number to unsigned int
+ * binary_to_uint - converts a binary number to unsigned int
  * @b: a string of 0s and 1s
  *
  * Return: unsigned int
@@ -19,7 +19,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[i] < '0' || b[i] > '1')
 			return (0);
-		decimal = 2 * decimal + (b[i] - '0'); 
+		decimal = 2 * decimal + (b[i] - '0');
 	}
 
 	return (decimal);
