@@ -11,6 +11,9 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count = 0;
 	long int add_diff;
 
+	if (!head)
+		return (98);
+
 	while (head)
 	{
 		add_diff = head - head->next;
@@ -21,9 +24,11 @@ size_t print_listint_safe(const listint_t *head)
 			head = head->next;
 		else
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			printf("-> [%p] %d\n", (void *)head->next,
+					head->next->n);
 			break;
 		}
+
 	}
 	return (count);
 }
