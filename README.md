@@ -21,7 +21,7 @@ It will cover the following concepts:
 
 ## Table of Contents
 * [Introduction](#Introduction)
-* [Prerequisites](# Prerequisites)
+* [Prerequisites](#Prerequisites)
 * [Projects](#Projects)
 * [Acknowledgement](#Acknowledgement)
 
