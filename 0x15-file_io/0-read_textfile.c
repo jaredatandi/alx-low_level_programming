@@ -15,16 +15,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	FILE *file;
 	size_t count_char = 0;
 	char ch;
+	int err;
 
 	file = fopen(filename, "r");
 
 	if (file == NULL)
 		return (0);
+
 	do {
 		ch = fgetc(file);
 		if (ch == EOF)
 			break;
-		count_char += _putchar(ch);
+		err = write(STDOUT_FILENO, &ch, 1);
+		if (err < 1)
+			return (0);
+		count_char++;
+
 	} while (count_char < letters);
 
 	fclose(file);
