@@ -29,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		ch = fgetc(file);
 		if (ch == EOF)
 			break;
-		err += write(STDOUT_FILENO, &ch, 1);
+		err = write(STDOUT_FILENO, &ch, 1);
 		if (err < 1)
 			return (0);
 		count_char++;
@@ -37,7 +37,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	} while (count_char < letters);
 
 	fclose(file);
-	if (err != count_char)
-		return (-1);
+
 	return (count_char);
 }
