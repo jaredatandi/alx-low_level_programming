@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * read_textfile - reads a test file and prints it to the POSIX
@@ -12,31 +13,29 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
-	size_t count_char = 0;
-	char ch;
-	int err;
+	FILE *buff;
+	ssize_t w, o, r;
 
-	if (!filename)
+	if (filename == NULL)
 		return (0);
 
-	file = fopen(filename, "r");
+	buff = malloc(sizeof(char) * letters);
 
-	if (file == NULL)
+	if (buff == NULL)
 		return (0);
 
-	do {
-		ch = fgetc(file);
-		if (ch == EOF)
-			break;
-		err = write(STDOUT_FILENO, &ch, 1);
-		if (err < 1)
-			return (0);
-		count_char++;
+	o = open(filename, O_RDONLY);
+	r = read(o, buff, letters);
+	w = write(STDOUT_FILENO, buff, r);
 
-	} while (count_char < letters);
+	if (o < 0 || r < 0 || w < 0 || w != r)
+	{
+		free(buff);
+		return (0);
+	}
 
-	fclose(file);
+	free(buff);
+	close(o);
 
-	return (count_char);
+	return (w);
 }
