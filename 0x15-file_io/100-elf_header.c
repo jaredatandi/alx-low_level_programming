@@ -10,6 +10,33 @@
 int check_elf(unsigned char *e_ident);
 void close_elf(int elf);
 void print_magic(unsigned char *e_ident);
+void print_class(unsigned char *e_ident);
+
+/**
+ * print_class - the file class
+ * @e_ident: array of bytes that specifies
+ * how to interpret the file
+ */
+
+void print_class(unsigned char *e_ident)
+{
+	printf("Class:			");
+	switch (e_ident[EI_CLASS])
+	{
+	case ELFCLASSNONE:
+		printf("invalid class\n");
+		break;
+	case ELFCLASS32:
+		printf("ELF32\n");
+		break;
+	case ELFCLASS64:
+		printf("ELF64\n");
+		break;
+	default:
+		printf("<Unknown: %x>", e_ident[EI_CLASS]);
+		break;
+	}
+}
 
 /**
  * print_magic - prints the magic numbers in an elf file
@@ -26,9 +53,12 @@ void print_magic(unsigned char *e_ident)
 	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%0x", e_ident[i]);
-		if (i < EI_NIDENT - 1)
+		if (i == EI_NIDENT - 1)
+		{
+			printf("\n");
+		}
+		else
 			printf(" ");
-		printf("\n");
 	}
 }
 /**
@@ -112,6 +142,7 @@ int main(int argc, char **argv)
 
 	check_elf(header->e_ident);
 	print_magic(header->e_ident);
+	print_class(header->e_ident);
 
 	return (argc);
 }
