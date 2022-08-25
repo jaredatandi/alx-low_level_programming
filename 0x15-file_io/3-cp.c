@@ -86,7 +86,7 @@ void check100(int check, int fd)
  *
  * Return: 0 on success
  */
-int main(int argc, char *argv[])
+/*int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, close_to, close_from;
 	ssize_t lenr, lenw;
@@ -114,4 +114,4 @@ int main(int argc, char *argv[])
 	check100(close_to, fd_to);
 	check100(close_from, fd_from);
 	return (0);
-}
+}*/
