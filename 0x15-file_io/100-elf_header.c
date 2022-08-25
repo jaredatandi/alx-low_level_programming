@@ -240,15 +240,21 @@ void print_magic(unsigned char *e_ident)
 
 int check_elf(unsigned char *e_ident)
 {
+	int index;
 
-	if (e_ident && ELFMAG0 && ELFMAG1 && ELFMAG2 && ELFMAG3)
-		;
-	else
+	for (index = 0; index < 4; index++)
 	{
-		dprintf(STDERR_FILENO, "ERROR!: Not ELF file\n");
-		exit(98);
+		if (e_ident[index] != 127 &&
+				e_ident[index] != 'E' &&
+				e_ident[index] != 'L' &&
+				e_ident[index] != 'F')
+		{
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
+			exit(98);
+		}
 	}
 	return (98);
+
 }
 
 /**
