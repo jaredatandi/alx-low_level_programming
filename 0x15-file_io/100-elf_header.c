@@ -11,6 +11,11 @@ int check_elf(unsigned char *e_ident);
 void close_elf(int elf);
 void print_magic(unsigned char *e_ident);
 
+/**
+ * print_magic - prints the magic numbers in an elf file
+ * @e_ident: array of file interpretation specifications
+ */
+
 void print_magic(unsigned char *e_ident)
 {
 	int i;
@@ -23,8 +28,7 @@ void print_magic(unsigned char *e_ident)
 		printf("%0x", e_ident[i]);
 		if (i < EI_NIDENT - 1)
 			printf(" ");
-		else
-			printf("\n");
+		printf("\n");
 	}
 }
 /**
@@ -38,7 +42,7 @@ int check_elf(unsigned char *e_ident)
 {
 
 	if (e_ident && ELFMAG0 && ELFMAG1 && ELFMAG2 && ELFMAG3)
-		return (0);
+		;
 	else
 	{
 		dprintf(STDERR_FILENO, "ERROR!: Not ELF file\n");
