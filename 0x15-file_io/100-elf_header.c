@@ -254,7 +254,6 @@ int check_elf(unsigned char *e_ident)
 		}
 	}
 	return (98);
-
 }
 
 /**
@@ -285,13 +284,11 @@ int main(int __attribute__((__unused__))argc, char **argv)
 	int o, r;
 
 	o = open(argv[1], O_RDONLY);
-
 	if (o < 0)
 	{
 		dprintf(STDERR_FILENO, "ERROR!: %s file cannot be opened\n", argv[1]);
 		exit(98);
 	}
-
 	header = malloc(sizeof(Elf64_Ehdr));
 	if (header == NULL)
 	{
@@ -300,7 +297,6 @@ int main(int __attribute__((__unused__))argc, char **argv)
 		exit(98);
 	}
 	r = read(o, header, sizeof(Elf64_Ehdr));
-
 	if (r < 0)
 	{
 		free(header);
