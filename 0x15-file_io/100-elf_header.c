@@ -27,7 +27,7 @@ void print_entry(unsigned char e_entry, unsigned char *e_ident);
 
 void print_entry(unsigned char e_entry, unsigned char *e_ident)
 {
-	printf("  Entry point address:                ");
+	printf("  Entry point address:         ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
