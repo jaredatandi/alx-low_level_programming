@@ -9,6 +9,24 @@
 
 int check_elf(unsigned char *e_ident);
 void close_elf(int elf);
+void print_magic(unsigned char *e_ident);
+
+void print_magic(unsigned char *e_ident)
+{
+	int i;
+
+	if (e_ident == NULL)
+		exit(98);
+	printf("Magic: ");
+	for (i = 0; i < EI_NIDENT; i++)
+	{
+		printf("%0x", e_ident[i]);
+		if (i < EI_NIDENT - 1)
+			printf(" ");
+		else
+			printf("\n");
+	}
+}
 /**
  * check_elf - checks if a file is elf
  * @e_ident: array of file interpretation specifications
@@ -20,10 +38,7 @@ int check_elf(unsigned char *e_ident)
 {
 
 	if (e_ident && ELFMAG0 && ELFMAG1 && ELFMAG2 && ELFMAG3)
-	{
-		printf("file is elf\n");
 		return (0);
-	}
 	else
 	{
 		dprintf(STDERR_FILENO, "ERROR!: Not ELF file\n");
@@ -92,6 +107,7 @@ int main(int argc, char **argv)
 	}
 
 	check_elf(header->e_ident);
+	print_magic(header->e_ident);
 
 	return (argc);
 }
