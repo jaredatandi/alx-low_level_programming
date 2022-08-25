@@ -167,7 +167,7 @@ void print_data(unsigned char *e_ident)
 	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
-			printf("Unknown data format\n");
+			printf("none\n");
 			break;
 		case ELFDATA2LSB:
 			printf("2's complement, little-endian\n");
@@ -194,7 +194,7 @@ void print_class(unsigned char *e_ident)
 	switch (e_ident[EI_CLASS])
 	{
 		case ELFCLASSNONE:
-			printf("invalid class\n");
+			printf("none\n");
 			break;
 		case ELFCLASS32:
 			printf("ELF32\n");
@@ -217,8 +217,6 @@ void print_magic(unsigned char *e_ident)
 {
 	int i;
 
-	if (e_ident == NULL)
-		exit(98);
 	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
 	{
