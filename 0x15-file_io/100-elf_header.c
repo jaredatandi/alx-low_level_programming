@@ -40,7 +40,7 @@ void print_entry(unsigned char e_entry, unsigned char *e_ident)
 		printf("%#x\n", (unsigned int)e_entry);
 
 	else
-		printf("%#lx\n", e_entry);
+		printf("%#x\n", e_entry);
 }
 
 /**
