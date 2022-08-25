@@ -278,13 +278,6 @@ int main(int __attribute__((__unused__))argc, char **argv)
 	Elf64_Ehdr *header;
 	int o, r;
 
-	if (argc < 2)
-	{
-		dprintf(STDERR_FILENO, "ERROR!: please provide atleast one file\n");
-		exit(98);
-	}
-
-
 	o = open(argv[1], O_RDONLY);
 
 	if (o < 0)
@@ -319,6 +312,9 @@ int main(int __attribute__((__unused__))argc, char **argv)
 	print_ABIVersion(header->e_ident);
 	print_type(header->e_type, header->e_ident);
 	print_entry(header->e_entry, header->e_ident);
+
+	free(header);
+	close_elf(o);
 
 	return (0);
 }
