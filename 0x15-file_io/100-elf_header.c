@@ -27,7 +27,7 @@ void print_entry(unsigned char e_entry, unsigned char *e_ident);
 
 void print_entry(unsigned char e_entry, unsigned char *e_ident)
 {
-	printf("  Entry point address:			");
+	printf("  Entry point address:                ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
@@ -51,7 +51,7 @@ void print_entry(unsigned char e_entry, unsigned char *e_ident)
 
 void print_ABIVersion(unsigned char *e_ident)
 {
-	printf("  ABI Version:			");
+	printf("  ABI Version:	               ");
 	printf("%d\n", e_ident[EI_ABIVERSION]);
 }
 
@@ -66,7 +66,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf("  Type:				");
+	printf("  Type:		               ");
 
 	switch (e_type)
 	{
