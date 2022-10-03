@@ -1,0 +1,146 @@
+!<arch>
+_abs.c/         0           0     0     644     74        `
+#include <stdio.h>
+#include "main.h"
+
+int _abs(int n)
+{
+	printf("abs");
+}
+_atoi.c/        0           0     0     644     59        `
+#include "main.h"
+
+int _atoi(char *s)
+{
+	printf("atoi");
+}
+
+_isalpha.c/     0           0     0     644     63        `
+#include "main.h"
+
+int _isalpha(int c)
+{
+	printf("isalpha");
+}
+
+_isdigit.c/     0           0     0     644     63        `
+#include "main.h"
+
+int _isdigit(int c)
+{
+	printf("isdigit");
+}
+
+_islower.c/     0           0     0     644     64        `
+#include "main.h"
+
+int _islower(int c)
+{
+	printf("is lower");
+}
+_isupper.c/     0           0     0     644     63        `
+#include "main.h"
+
+int _isupper(int c)
+{
+	printf("isupper");
+}
+
+_memset.c/      0           0     0     644     89        `
+#include "main.h"
+
+char *_memset(char *s, char b, unsigned int n)
+{
+	printf("memset");
+}
+
+_putchar.c/     0           0     0     644     64        `
+#include "main.h"
+
+int _putchar(char c)
+{
+	printf("putchar");
+}
+_puts.c/        0           0     0     644     60        `
+#include "main.h"
+
+void _puts(char *s)
+{
+	printf("puts");
+}
+_strcat.c/      0           0     0     644     79        `
+#include "main.h"
+
+char *_strcat(char *dest, char *src)
+{
+	printf("strcat");
+}
+
+_strchr.c/      0           0     0     644     73        `
+#include "main.h"
+
+char *_strchr(char *s, char c)
+{
+	printf("strchr");
+}
+
+_strcmp.c/      0           0     0     644     74        `
+#include "main.h"
+
+int _strcmp(char *s1, char *s2)
+{
+	printf("strcmp");
+}
+_strcpy.c/      0           0     0     644     80        `
+#include "main.h"
+
+char *_strcpy(char *dest, char *src)
+{
+	printf("strncpy");
+}
+_strlen.c/      0           0     0     644     63        `
+#include "main.h"
+
+int _strlen(char *s)
+{
+	printf("strlen");
+}
+
+_strncat.c/     0           0     0     644     88        `
+#include "main.h"
+
+char *_strncat(char *dest, char *src, int n)
+{
+	printf("strncat");
+}
+_strncpy.c/     0           0     0     644     87        `
+#include "main.h"
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	printf("strspn");
+}
+
+_strpbrk.c/     0           0     0     644     77        `
+#include "main.h"
+
+char *_strpbrk(char *s, char *accept)
+{
+	printf("brk");
+}
+
+_strspn.c/      0           0     0     644     87        `
+#include "main.h"
+
+unsigned int _strspn(char *s, char *accept)
+{
+	printf("strncpy");
+}
+
+_strstr.c/      0           0     0     644     86        `
+#include "main.h"
+
+char *_strstr(char *haystack, char *needle)
+{
+	printf("strchr");
+}
