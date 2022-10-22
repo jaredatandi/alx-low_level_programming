@@ -26,4 +26,6 @@ typedef struct Hash_table_s
 {
 	unsigned long int size;
 	hash_node_t **array;
-} Hash_table_t;
+} hash_table_t;
+
+#include <stdlib.h>
