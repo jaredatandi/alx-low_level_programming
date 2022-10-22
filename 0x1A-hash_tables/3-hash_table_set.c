@@ -2,8 +2,8 @@
 /**
  * hash_table_set - adds an element to the hash table
  * @ht: hash table pointer
- * @key: pointer to the key
- * @value: the value to be inserted
+ * @key: the key
+ * @value: the value
  * Return: 1 success, 0 failure
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
