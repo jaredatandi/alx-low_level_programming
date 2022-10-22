@@ -1,3 +1,10 @@
+#ifndef _HASH_TABLE_H_
+#define _HASH_TABLE_H_
+
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
 /**
  * struct hash_node_s - Node of a hash table
  *
@@ -14,7 +21,7 @@ typedef struct hash_node_s
 } hash_node_t;
 
 /**
- * struct has_table_s - Hash table data structure
+ * struct hash_table_s - Hash table data structure
  *
  * @size: The size of the array
  * @array: An array of size @size
@@ -22,10 +29,10 @@ typedef struct hash_node_s
  * because we want our HashTable to use a Chaining collision handling
  */
 
-typedef struct Hash_table_s
+typedef struct hash_table_s
 {
 	unsigned long int size;
 	hash_node_t **array;
 } hash_table_t;
 
-#include <stdlib.h>
+#endif
