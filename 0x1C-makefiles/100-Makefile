@@ -42,3 +42,4 @@ clean:
 oclean:
 	$(RM) $(OBJ)
 
+.PHONY: all clean fclean oclean re
