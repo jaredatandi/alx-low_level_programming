@@ -23,22 +23,22 @@ all: $(NAME)
 
 # rule to build the executable
 $(NAME): $(OBJ)
-    $(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 # rule to recompile updated source files
 re: fclean all
 
 # rule to delete Emacs and Vim temporary files, executable, and object files
 fclean: clean oclean
-    $(RM) $(NAME)
+	$(RM) $(NAME)
 
 # rule to delete Emacs and Vim temporary files
 clean:
-    $(RM) *~
-    $(RM) *#
-    $(RM) .*swp
+	$(RM) *~
+	$(RM) *#
+	$(RM) .*swp
 
 # rule to delete object files
 oclean:
-    $(RM) $(OBJ)
+	$(RM) $(OBJ)
 
