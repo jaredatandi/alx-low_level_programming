@@ -1,23 +1,32 @@
-# A complete make file
-NAME = school 
 CC = gcc
-SRC = main.c school.c
-RM = rm -f
+SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-# %.o : %.c
-#	$(CC) $(CFLAGS) -c $< $@
+.PHONY: all clean oclean fclean re
 
-all: $(OBJ) 
-	$(CC) $(OBJ) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
+
+%.o: %.c
+	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) $(NAME)
+	$(RM) *.o
+	$(RM) *~
+	$(RM) \#*\#
+	$(RM) .*.swp
+	$(RM) .*.swo
 
 oclean:
 	$(RM) $(OBJ)
 
-fclean: clean oclean 
+fclean: clean oclean
 
-re: oclean all
+re: fclean all
+
