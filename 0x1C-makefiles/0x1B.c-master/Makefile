@@ -1,7 +1,6 @@
 # Builds an executable named school using variables
-SRC_DIR = src
-CC = gcc
-SRC = main.c school.c
-all: main.c school.c m.h
+CC := gcc
+SRC := main.c school.c
+all: main.c school.c
 	$(CC) $(SRC) -o school
 	
