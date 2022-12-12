@@ -8,21 +8,21 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: $(NAME)
 
 $(NAME): $(OBJ)
-        $(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 clean:
-        $(RM) $(NAME)
-        $(RM) *.o
-        $(RM) *~
-        $(RM) \#*
-        $(RM) .\#*
-        $(RM) .*.swp
+	$(RM) $(NAME)
+	$(RM) *.o
+	$(RM) *~
+	$(RM) \#*
+	$(RM) .\#*
+	$(RM) .*.swp
 
 oclean:
-        $(RM) *.o
+	$(RM) *.o
 
 fclean: clean
-        $(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
