@@ -1,5 +1,5 @@
 # Create a useful file
-SRC = $(wilcard *.c) 
+SRC = main.c school.c 
 OBJ = $(SRC:.c=.o) 
 NAME = school
 CC = gcc
